@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+
+  backend:
+    image: application-backend
+    entrypoint: ["npx", "nodemon", "/usr/src/app/app.js"]
+    networks:
+     - cicdapp
+    ports:
+     - 3000:3000
+    container_name: app-backend
+    restart: unless-stopped
+    environment:
+      DBHOST: 172.16.189.76
+      dbUserName: astound
+
+  frontend:
+    image: application--frontend
+    networks:
+     - cicdapp
+    ports:
+     - 80:80
+    container_name: app-frontend
+    restart: unless-stopped
+  mongodb:
+    
+
+networks:
+  cicdapp:
