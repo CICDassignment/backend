@@ -26,6 +26,8 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: secret
     volumes:
      - data:/etc/mongo
+    networks:
+     - cicdapp
 
 networks:
   cicdapp:
