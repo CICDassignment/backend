@@ -61,7 +61,7 @@
         name: application-backend
         path: /home/ubuntu/backend
         dockerfile: Dockerfile
-      when: dockerfile_exists.stat.exists
+        force: yes
 
     - name: Ensure the Dockerfile exists
       stat:
