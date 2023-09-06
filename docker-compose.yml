@@ -6,7 +6,6 @@ services:
     depends_on:
      - mongodb
     image: application-backend
-    entrypoint: ["npx", "nodemon", "/usr/src/app/app.js"]
     networks:
      - cicdapp
     ports:
