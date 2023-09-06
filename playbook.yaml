@@ -21,6 +21,7 @@
     - name: apt update
       apt:
         update_cache: yes
+      ignore_errors: true
 
     - name: Install Docker if not already installed
       apt:
@@ -74,5 +75,6 @@
         files:
           - "{{ compose_file_path }}"
         build: yes
-      when: compose_file_stat.stat.exists
-      become: true
+        recreate: always
+        when: compose_file_stat.stat.exists
+        become: true
