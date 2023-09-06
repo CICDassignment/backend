@@ -18,9 +18,13 @@
       register: docker_version
       ignore_errors: true
 
+    - name: apt update
+      apt:
+        update_cache: yes
+
     - name: Install Docker if not already installed
       apt:
-        name: docker-ce
+        name: docker.io
         state: present
       when: docker_version.rc != 0
     
