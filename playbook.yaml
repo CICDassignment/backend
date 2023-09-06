@@ -7,7 +7,7 @@
   vars:
     ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
     compose_file_path: /home/ubuntu/backend/docker-compose.yml
-    github_repo: https://github.com/CICDassignment/backend.git
+    github_repo: github.com/CICDassignment/backend.git
     github_credentials_id: mumernaeem1123
     git_access_token: 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
     repo_url: "{{ github_credentials_id }}:{{ git_access_token }}@{{ github_repo }}"
