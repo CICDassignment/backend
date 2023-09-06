@@ -13,16 +13,16 @@
     repo_url: "{{ github_credentials_id }}:{{ git_access_token }}@{{ github_repo }}"
 
   tasks:
-    - name: Check if Docker is already installed
-      command: docker --version
-      register: docker_version
-      ignore_errors: true
+    - name: Check if docker is installed
+      command: docker version
+      register: docker_info
+      failed_when: docker_info.rc != 0
 
-    - name: Install Docker if not already installed
+    - name: Install Docker Engine
       apt:
-        name: docker.io
+        name: docker-ce
         state: present
-      when: docker_version.rc != 0
+      when: docker_info.rc == 1
     
     - name: Install Docker Compose
       apt:
