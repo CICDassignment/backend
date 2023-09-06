@@ -1,3 +1,3 @@
 # backend
 To run Docker compose
-docker compose up -d
+# # docker compose up -d
