@@ -76,5 +76,5 @@
           - "{{ compose_file_path }}"
         build: yes
         recreate: always
-        when: compose_file_stat.stat.exists
-        become: true
+      when: compose_file_stat.stat.exists
+      become: true
