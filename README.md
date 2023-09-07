@@ -8,9 +8,7 @@ The readme to setup the project will take a lot of time(2 to 3 days) because it 
 
 git push
 
-## From Jenkins
+## Rest of the CI will done through jenkins while the CD part will be done by Ansible
 
-```sh
-build now
 ```
 
